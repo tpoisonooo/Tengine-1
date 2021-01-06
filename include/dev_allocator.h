@@ -36,9 +36,9 @@ struct dev_allocator
 {
     char* name;
     int (*describe)(struct dev_allocator*, struct vector* allowed_ops, struct vector* blocked_ops, struct vector* precision);
-    int (*evaluation)(struct dev_allocator*, struct subgraph*, struct vector* tensors, struct vector* nodes);
-    int (*allocate)(struct dev_allocator*, struct subgraph*);
-    int (*release)(struct dev_allocator*, struct subgraph*);
+    int (*evaluation)(struct dev_allocator*, struct ir_graph*, struct vector* tensors, struct vector* nodes);
+    int (*allocate)(struct dev_allocator*, struct ir_graph*);
+    int (*release)(struct dev_allocator*, struct ir_graph*);
 };
 
 int init_allocator_registry(struct dev_allocator* allocator);

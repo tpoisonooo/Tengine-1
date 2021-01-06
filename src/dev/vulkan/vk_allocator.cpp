@@ -660,7 +660,9 @@ static int vk_allocate(struct dev_allocator* allocator, struct ir_graph* ir_grap
 
 static struct dev_allocator vk_allocator = {
     .name = "VK",
-    .allocate = vk_allocate
+    .describe = nullptr,
+    .evaluation = nullptr,
+   .allocate = vk_allocate
 };
 
 
